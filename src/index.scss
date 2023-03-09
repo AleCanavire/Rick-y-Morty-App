@@ -1,0 +1,16 @@
+// FUENTES
+@import '/src/scss/fonts';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+@import '/src/components/Background/Background';
