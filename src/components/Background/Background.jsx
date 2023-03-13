@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function Background() {
   const [cords, setCords] = useState({ x: 0, y: 0 });
+  const backgroundRef = useRef();
 
   useEffect(() => {
     function handleMouseMove(e) {
       setCords({ x: e.clientX, y: e.clientY });
     }
-
-    document.addEventListener("mousemove", handleMouseMove);
+    const bgRef = backgroundRef.current;
+    
+    bgRef.addEventListener("mousemove", handleMouseMove);
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      bgRef.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
+
   return (
-    <div className="background">
+    <div ref={backgroundRef} className="background">
       <img style={{transform: `translate(${cords.x / 100}px, ${cords.y / 100}px)`}} className="nubes" src="/images/Nubes.jpg" alt="Nubes" />
       <img style={{transform: `translate(${cords.x / 80}px, ${cords.y / 80}px)`}} className="city" src="/images/City.png" alt="Ciudad" />
       <div className="asteroids">
@@ -29,6 +32,12 @@ function Background() {
       <img style={{transform: `translate(${cords.x / 45}px, ${cords.y / 45}px)`}} className="beth space-shadow" src="/images/Beth.png" alt="Beth Flotando" />
       <img style={{transform: `translate(${cords.x / 30}px, ${cords.y / 30}px)`}} className="morty shadow" src="/images/Morty.png" alt="Morty Flotando" />
       <img style={{transform: `translate(${cords.x / -140}px, ${cords.y / -140}px)`}} className="summer space-shadow" src="/images/Summer.png" alt="Summer Flotando" />
+      <a href="#RickAndMortyApi" className="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M6 9l6 6l6 -6"></path>
+        </svg>
+      </a>
     </div>
   )
 }
