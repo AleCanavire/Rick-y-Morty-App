@@ -8,9 +8,13 @@
 }
 
 .App{
+  background: #000600;
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @import '/src/components/Background/Background';
+@import '/src/components/RickAndMortyApi/RickAndMortyApi';
+@import '/src/components/RickAndMortyApi/Character';
