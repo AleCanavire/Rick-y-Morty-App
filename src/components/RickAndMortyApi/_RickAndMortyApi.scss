@@ -1,6 +1,6 @@
 main{
   min-height: 100vh;
-  padding: 30px 20px;
+  padding: 50px 3vw;
   .logo{
     width: 35%;
     min-width: 300px;
@@ -12,15 +12,14 @@ main{
   .characters{
     width: 100%;
     max-width: 1400px;
-    padding: 50px 0;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
       minmax(
-        400px, 1fr
+        300px, 1fr
       )
     );
-    gap: 50px;
+    gap: clamp(20px, 4vw, 50px);
   }
 }
