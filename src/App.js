@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <nav className="nav"></nav>
       <Background/>
-      <main id="RickAndMortyApi">
+      <main id="RickAndMorty">
         <RickAndMortyApi/>
       </main>
     </div>
