@@ -28,4 +28,14 @@
       transition: .15s transform ease-out;
     }
   }
+  .pagination-button.disabled{
+    opacity: .6;
+    &:hover{
+      background: #202020;
+    }
+    &:hover svg{
+      transform: scale(1);
+      filter: drop-shadow(0px 0px 4px rgb(100, 255, 0)) drop-shadow(0px 0px 15px rgb(0, 255, 0));
+    }
+  }
 }

@@ -23,13 +23,21 @@ function RickAndMortyApi() {
   useEffect(()=>{
     getCharacters(initialUrl)
   }, [])
+
+  const prev = Boolean(pages.prev);
+  const next = Boolean(pages.next);
   
   return (
     <>
       <div className="logo">
         <img src="/images/rick-and-morty.png" alt="Rick and Morty Logo" />
       </div>
-      <Pagination onPrevPage={()=>getCharacters(pages.prev)} onNextPage={()=>getCharacters(pages.next)}/>
+      <Pagination
+        onPrevPage={()=>{ pages.prev !== null && getCharacters(pages.prev) }}
+        onNextPage={()=>{ pages.next !== null && getCharacters(pages.next) }}
+        prev={prev}
+        next={next}
+      />
       <div className="characters">
         { characters.map((character, index)=>{
           return(
@@ -40,7 +48,12 @@ function RickAndMortyApi() {
           )})
         }  
       </div>
-      <Pagination onPrevPage={()=>getCharacters(pages.prev)} onNextPage={()=>getCharacters(pages.next)}/>
+      <Pagination
+        onPrevPage={()=>{ pages.prev !== null && getCharacters(pages.prev) }}
+        onNextPage={()=>{ pages.next !== null && getCharacters(pages.next) }}
+        prev={prev}
+        next={next}
+      />
     </>
   )
 }
