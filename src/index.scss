@@ -14,8 +14,14 @@
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+@media (max-width:768px){
+  .App{
+    height: 100dvh;
+  }
+}
 
 @import '/src/components/Background/Background';
 @import '/src/components/RickAndMortyApi/RickAndMortyApi';
 @import '/src/components/RickAndMortyApi/Character';
 @import '/src/components/Pagination/Pagination';
+@import '/src/components/Options/Options';

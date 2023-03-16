@@ -10,6 +10,11 @@ function App() {
       <main id="RickAndMorty">
         <RickAndMortyApi/>
       </main>
+      <footer>
+        <p>Esta pagina fue desarrollada por
+          <a href="https://www.linkedin.com/in/alexander-canavire/"> {"Alexander\u00A0Canavire"}</a>
+        </p>
+      </footer>
     </div>
   );
 }
