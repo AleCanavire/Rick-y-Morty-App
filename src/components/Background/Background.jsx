@@ -63,7 +63,7 @@ function Background() {
             <img style={{transform: `translate(${cords.x / 6.5}px, ${cords.y / 6.5}px)`}} className="center shadow" src="/images/Asteroids-center.webp" alt="Asteroides de fondo" />
             <img style={{transform: `translate(${cords.x / 6.5}px, ${cords.y / 6.5}px)`}} className="right shadow" src="/images/Asteroids-right.webp" alt="Asteroides de fondo" />
           </div>
-          <img style={{transform: `translate(${cords.x / 6}px, ${cords.y / 6}px)`}} className="jerry space-shadow" src="/images/Jerry.webp" alt="Jerry Flotando" />
+          <img style={{transform: `translate(${cords.x / 4}px, ${cords.y / 4}px)`}} className="jerry space-shadow" src="/images/Jerry.webp" alt="Jerry Flotando" />
           <img style={{transform: `translate(${cords.x / 5}px, ${cords.y / 5}px)`}} className="rick shadow" src="/images/Rick.webp" alt="Rick Flotando" />
           <img style={{transform: `translate(${cords.x / 4}px, ${cords.y / 4}px)`}} className="asteroid-on shadow" src="/images/Asteroids-on.webp" alt="Asteroides de fondo" />
           <img style={{transform: `translate(${cords.x / 4}px, ${cords.y / 4}px)`}} className="beth space-shadow" src="/images/Beth.webp" alt="Beth Flotando" />
