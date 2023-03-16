@@ -30,7 +30,7 @@ function RickAndMortyApi() {
   return (
     <>
       <div className="logo">
-        <img src="/images/rick-and-morty.png" alt="Rick and Morty Logo" />
+        <img src="/images/rick-and-morty.webp" alt="Rick and Morty Logo" />
       </div>
       <Pagination
         onPrevPage={()=>{ pages.prev !== null && getCharacters(pages.prev) }}
