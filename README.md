@@ -1,5 +1,5 @@
 # Rick y morty App !
-[![Rick-and-Morty-App.jpg](https://i.postimg.cc/Y0X596kr/Rick-and-Morty-App.jpg)](https://postimg.cc/0KwWXJbF)
+[![Rick-and-Morty-App.webp](https://i.postimg.cc/BnFf47YN/Rick-and-Morty-App.webp)](https://postimg.cc/w19Gk2ds)
 
 
 ## Esta conformada por:
