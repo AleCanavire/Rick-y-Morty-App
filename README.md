@@ -1,6 +1,7 @@
 # Rick y morty App !
 [![Rick-and-Morty-App.jpg](https://i.postimg.cc/Y0X596kr/Rick-and-Morty-App.jpg)](https://postimg.cc/0KwWXJbF)
 
+
 ## Esta conformada por:
 * Pagina de inicio con efecto Parallax
 * Pagina de personajes
