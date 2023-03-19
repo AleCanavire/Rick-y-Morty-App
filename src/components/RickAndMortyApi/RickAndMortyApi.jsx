@@ -48,10 +48,10 @@ function RickAndMortyApi() {
       <Options onSearch={onSearch}/>
       <div className="characters">
         { characters
-          ? characters.map((character, index)=>{
+          ? characters.map((character)=>{
             return(
               <Character
-                key={index}
+                key={character.id}
                 character={character}
               />
             )})

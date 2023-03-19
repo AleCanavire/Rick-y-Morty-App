@@ -1,0 +1,34 @@
+:root{
+  --portal-translate: -10%;
+}
+
+@media (max-width:1436px){
+  :root{
+    --portal-translate: -13%;
+  }
+}
+@media (max-width:1200px){
+  :root{
+    --portal-translate: -11%;
+  }
+}
+@media (max-width:1046px){
+  :root{
+    --portal-translate: -16%;
+  }
+}
+@media (max-width:768px){
+  :root{
+    --portal-translate: -14%;
+  }
+}
+@media (max-width:667px){
+  :root{
+    --portal-translate: -17%;
+  }
+}
+@media (max-width:375px){
+  :root{
+    --portal-translate: -14%;
+  }
+}
