@@ -13,21 +13,25 @@
   position: relative;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
-  &::-webkit-scrollbar-track {
-    background: #202020; 
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #383838; 
-    border-radius: 6px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: #484848; 
-  }
 }
 
+@media (min-width:768px){
+  .App{
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #202020; 
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #383838; 
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #484848; 
+    }
+  }
+}
 @media (max-width:768px){
   .App{
     height: 100svh;

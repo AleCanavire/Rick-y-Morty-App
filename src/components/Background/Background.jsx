@@ -68,7 +68,7 @@ function Background() {
           <img style={{transform: `translate(${cords.x / 4}px, ${cords.y / 4}px)`}} className="asteroid-on shadow" src="/images/Asteroids-on.webp" alt="Asteroides de fondo" />
           <img style={{transform: `translate(${cords.x / 4}px, ${cords.y / 4}px)`}} className="beth space-shadow" src="/images/Beth.webp" alt="Beth Flotando" />
           <img style={{transform: `translate(${cords.x / 3}px, ${cords.y / 3}px)`}} className="morty shadow" src="/images/Morty.webp" alt="Morty Flotando" />
-          <img style={{transform: `translate(-${cords.x / 6}px, -${cords.y / 6}px)`}} className="summer space-shadow" src="/images/Summer.webp" alt="Summer Flotando" />
+          <img style={{transform: `translate(${cords.x / -6}px, ${cords.y / -6}px)`}} className="summer space-shadow" src="/images/Summer.webp" alt="Summer Flotando" />
           <a href="#RickAndMorty" className="arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
