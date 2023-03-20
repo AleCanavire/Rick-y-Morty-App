@@ -5,7 +5,8 @@
   display: flex;
   justify-content: space-between;
   .search-container{
-    width: 200px;
+    width: 100%;
+    max-width: 180px;
     height: 35px;
     border-radius: 6px;
     background: #202020;
@@ -36,12 +37,17 @@
       }
     }
   }
-}
-
-@media (max-width: 425px){
-  .options{
-    .search-container{
-      width: 100%;
-    }
+  .my-favorites{
+    color: #daffc3;
+    background: #202020;
+    height: 35px;
+    padding: 0 8px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #9eff62;
+    border-radius: 6px;
+    font-family: 'WubbaLubbaDubDub';
+    font-size: 16px;
+    cursor: pointer;
   }
 }

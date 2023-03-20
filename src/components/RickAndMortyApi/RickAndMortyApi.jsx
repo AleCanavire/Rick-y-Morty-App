@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
+import { favContext } from '../../context/favContext';
 import Options from '../Options/Options';
 import Pagination from '../Pagination/Pagination';
 import Character from './Character';
@@ -7,6 +8,7 @@ function RickAndMortyApi() {
   const initialUrl = "https://rickandmortyapi.com/api/character"
 
   const [characters, setCharacters] = useState([]);
+  const [allCharacters, setAllCharacters] = useState([])
   const [pages, setPages] = useState({
     prev: null,
     next: null
@@ -22,15 +24,31 @@ function RickAndMortyApi() {
       if (data.info) {
         setPages({ prev: data.info.prev, next: data.info.next })
       }
+      if (allCharacters.length === 0) {
+        setAllCharacters(data.results);
+      }
     })
     .catch((error) => console.log(error));
   }
   useEffect(()=>{
-    getCharacters(initialUrl)
+    getCharacters(initialUrl);
   }, [])
   
   const onSearch = (e)=> {
     getCharacters(`https://rickandmortyapi.com/api/character/?name=${e.target.value}`)
+  }
+
+  const [activePage, setActivePage] = useState("home");
+  const favorites = useContext(favContext).favorites
+
+  function onViewFavorites() {
+    if (activePage === "home") {
+      setActivePage("favorites");
+      setPages({ prev: null, next: null })
+    } else if (activePage === "favorites") {
+      setActivePage("home");
+      getCharacters(initialUrl)
+    }
   }
 
   return (
@@ -45,20 +63,34 @@ function RickAndMortyApi() {
         prev={Boolean(pages.prev)}
         next={Boolean(pages.next)}/>
       }
-      <Options onSearch={onSearch}/>
+      <Options onSearch={onSearch} onViewFavorites={onViewFavorites}/>
       <div className="characters">
-        { characters
-          ? characters.map((character)=>{
-            return(
-              <Character
-                key={character.id}
-                character={character}
-              />
-            )})
-          : <div className="no-characters-found">
-              <h3>No se encontraron personajes</h3>
-            </div>
-        }  
+        { activePage === "home"
+          ? ( characters
+              ? characters.map((character)=>{
+                return(
+                  <Character
+                    key={character.id}
+                    character={character}
+                  />
+                )})
+              : <div className="no-characters-found">
+                  <h3>No se encontraron personajes</h3>
+                </div>
+            )
+          : ( favorites.length !== 0
+              ? favorites.map((character)=>{
+                return(
+                  <Character
+                    key={character.id}
+                    character={character}
+                  />
+                )})
+              : <div className="no-characters-found">
+                  <h3>No agregaste personajes a favoritos</h3>
+                </div>
+            )
+        }
       </div>
       { characters &&
         <Pagination

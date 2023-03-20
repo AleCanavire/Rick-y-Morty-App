@@ -1,7 +1,23 @@
-import React, { useState } from 'react';
-import portalSound from "../../assets/media/portal-sound-effect.mp3"
+import React, { useContext, useState } from 'react';
+import { favContext } from "../../context/favContext"
+import portalSound from "../../assets/media/portal-sound-effect.mp3";
 
 function Character({ character }) {
+
+  const {
+    addCharacter,
+    removeCharacter,
+    isFavorite
+  } = useContext(favContext)
+
+  function addRemove(id) {
+    if (isFavorite(id)) {
+      removeCharacter(id)
+    } else{
+      addCharacter(character)
+    }
+  }
+
   const status = character.status.toLowerCase();
 
   const [active, setActive] = useState(false);
@@ -20,8 +36,6 @@ function Character({ character }) {
     }, 4150)
   }
 
-  
-
   const [episodes, setEpisodes] = useState([]);
   const getEpisodes = async () => {
     if (episodes.length === 0) {
@@ -32,7 +46,7 @@ function Character({ character }) {
   };
 
   return (
-    <div onClick={!active ? activePortalGun : undefined} style={active ? {zIndex: 10} : {}} className="character-container">
+    <div style={active ? {zIndex: 10} : {}} className="character-container">
       <div className={`character-card-container ${active ? "changeCard" : ""}`}>
         <div className="gradient-container">
           <div className={`gradient ${status}`}/>
@@ -52,7 +66,20 @@ function Character({ character }) {
               <li className="origin"><span>Origin</span>{character.origin.name}</li>
               <li className="location"><span>Location</span>{character.location.name}</li>
             </ul>
-          </div>  
+          </div>
+          <div className="add-to-favorites" onClick={()=>addRemove(character.id)}>
+            { isFavorite(character.id)
+              ? <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-star-filled" width={24} height={24} viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" strokeWidth={0} fill="currentColor"></path>
+                </svg>
+              : <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-star" width={24} height={24} viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>
+                </svg>
+            }
+          </div>
+          <div className="change-card" onClick={!active ? activePortalGun : undefined}/>
         </div>
         <div className="character-card-back" style={flip ? {opacity: 1, visibility: "visible"}: {opacity: 0, visibility: "hidden"}}>
           <div className="character-episodes-container">
@@ -72,7 +99,7 @@ function Character({ character }) {
               }
             </div>
           </div>
-          
+          <div className="change-card" onClick={!active ? activePortalGun : undefined}/>
         </div>
       </div>
       <div style={active ? {visibility: "visible"} : {}} className="portal-gun-container">

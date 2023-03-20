@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Options({ onSearch }) {
+function Options({ onSearch, onViewFavorites }) {
   return (
     <div className="options">
       <div className="search-container">
@@ -12,6 +12,9 @@ function Options({ onSearch }) {
             <path d="M21 21l-6 -6"></path>
           </svg>
         </button>
+      </div>
+      <div className="my-favorites" onClick={onViewFavorites}>
+        Favorites
       </div>
     </div>
   )

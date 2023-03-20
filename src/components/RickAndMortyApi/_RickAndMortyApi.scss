@@ -23,6 +23,16 @@ main{
     );
     gap: clamp(20px, 4vw, 50px);
   }
+  .no-characters-found{
+    min-height: 100vh;
+    h3{
+      color: #fff;
+      font-family: "WubbaLubbaDubDub";
+      font-size: 22px;
+      text-align: center;
+      padding: 80px 0;
+    }
+  }
 }
 footer{
   color: #fff;
