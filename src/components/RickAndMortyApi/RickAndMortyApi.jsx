@@ -25,7 +25,11 @@ function RickAndMortyApi() {
         setPages({ prev: data.info.prev, next: data.info.next })
       }
       if (allCharacters.length === 0) {
-        setAllCharacters(data.results);
+        setAllCharacters({
+          characters: data.results,
+          prev: data.info.prev,
+          next: data.info.next
+        });
       }
     })
     .catch((error) => console.log(error));
@@ -47,7 +51,8 @@ function RickAndMortyApi() {
       setPages({ prev: null, next: null })
     } else if (activePage === "favorites") {
       setActivePage("home");
-      getCharacters(initialUrl)
+      setCharacters(allCharacters.characters);
+      setPages({ prev: allCharacters.prev, next: allCharacters.next })
     }
   }
 
@@ -63,7 +68,7 @@ function RickAndMortyApi() {
         prev={Boolean(pages.prev)}
         next={Boolean(pages.next)}/>
       }
-      <Options onSearch={onSearch} onViewFavorites={onViewFavorites}/>
+      <Options onSearch={onSearch} onViewFavorites={onViewFavorites} activePage={activePage}/>
       <div className="characters">
         { activePage === "home"
           ? ( characters
@@ -75,7 +80,7 @@ function RickAndMortyApi() {
                   />
                 )})
               : <div className="no-characters-found">
-                  <h3>No se encontraron personajes</h3>
+                  <h3>No characters found</h3>
                 </div>
             )
           : ( favorites.length !== 0
@@ -87,7 +92,7 @@ function RickAndMortyApi() {
                   />
                 )})
               : <div className="no-characters-found">
-                  <h3>No agregaste personajes a favoritos</h3>
+                  <h3>You haven't added characters to favorites yet</h3>
                 </div>
             )
         }

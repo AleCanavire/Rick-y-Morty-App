@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Options({ onSearch, onViewFavorites }) {
+function Options({ onSearch, onViewFavorites, activePage }) {
   return (
     <div className="options">
       <div className="search-container">
@@ -14,7 +14,10 @@ function Options({ onSearch, onViewFavorites }) {
         </button>
       </div>
       <div className="my-favorites" onClick={onViewFavorites}>
-        Favorites
+        { activePage === "home"
+          ? "Favorites"
+          : "Home"
+        }
       </div>
     </div>
   )

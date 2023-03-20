@@ -67,7 +67,7 @@ function Character({ character }) {
               <li className="location"><span>Location</span>{character.location.name}</li>
             </ul>
           </div>
-          <div className="add-to-favorites" onClick={()=>addRemove(character.id)}>
+          <div className={`add-to-favorites ${isFavorite(character.id) ? "added" : ""}`} onClick={()=>addRemove(character.id)}>
             { isFavorite(character.id)
               ? <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-star-filled" width={24} height={24} viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
