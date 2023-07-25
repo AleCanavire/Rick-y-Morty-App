@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+img{
+  user-select: none;
+}
+
 .App{
   background: #000600;
   height: 100vh;
@@ -39,7 +43,7 @@
 }
 
 @import '/src/components/Background/Background';
-@import '/src/components/RickAndMortyApi/RickAndMortyApi';
-@import '/src/components/RickAndMortyApi/Character';
+@import '/src/components/Characters/Characters';
+@import '/src/components/Characters/Character';
 @import '/src/components/Pagination/Pagination';
 @import '/src/components/Options/Options';

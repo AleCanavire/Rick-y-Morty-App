@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
-function Options({ onSearch, onViewFavorites, activePage }) {
+function Options({ onSearch }) {
+  const location = useLocation();
+
   return (
     <div className="options">
       <div className="search-container">
@@ -13,12 +16,12 @@ function Options({ onSearch, onViewFavorites, activePage }) {
           </svg>
         </button>
       </div>
-      <div className="my-favorites" onClick={onViewFavorites}>
-        { activePage === "home"
+      <Link className="my-favorites" to={location.pathname === "/" ? "/favorites" : "/"}>
+        { location.pathname === "/"
           ? "Favorites"
           : "Home"
         }
-      </div>
+      </Link>
     </div>
   )
 }

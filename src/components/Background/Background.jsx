@@ -42,10 +42,10 @@ function Background() {
             <img style={{transform: `translate(${cords.x / 60}px, ${cords.y / 60}px)`}} className="center shadow" src="/images/Asteroids-center.webp" alt="Asteroides de fondo" />
             <img style={{transform: `translate(${cords.x / 100}px, ${cords.y / 100}px)`}} className="right shadow" src="/images/Asteroids-right.webp" alt="Asteroides de fondo" />
           </div>
-          <img style={{transform: `translate(${cords.x / 35}px, ${cords.y / 35}px)`}} className="jerry space-shadow" src="/images/Jerry.webp" alt="Jerry Flotando" />
+          <img style={{transform: `translate(${cords.x / 35}px, ${cords.y / 20}px)`}} className="jerry space-shadow" src="/images/Jerry.webp" alt="Jerry Flotando" />
           <img style={{transform: `translate(${cords.x / 50}px, ${cords.y / 50}px)`}} className="rick shadow" src="/images/Rick.webp" alt="Rick Flotando" />
           <img style={{transform: `translate(${cords.x / 100}px, ${cords.y / 100}px)`}} className="asteroid-on shadow" src="/images/Asteroids-on.webp" alt="Asteroides de fondo" />
-          <img style={{transform: `translate(${cords.x / 45}px, ${cords.y / 45}px)`}} className="beth space-shadow" src="/images/Beth.webp" alt="Beth Flotando" />
+          <img style={{transform: `translate(${cords.x / 60}px, ${cords.y / -200}px)`}} className="beth space-shadow" src="/images/Beth.webp" alt="Beth Flotando" />
           <img style={{transform: `translate(${cords.x / 30}px, ${cords.y / 30}px)`}} className="morty shadow" src="/images/Morty.webp" alt="Morty Flotando" />
           <img style={{transform: `translate(${cords.x / -140}px, ${cords.y / -140}px)`}} className="summer space-shadow" src="/images/Summer.webp" alt="Summer Flotando" />
           <a href="#RickAndMorty" className="arrow">
